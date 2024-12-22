@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Selectors for resources
     const resourcesDiv = document.getElementById('battalions');
-    const availableUnits = document.getElementById('available-units');
     const requestedUnits = document.getElementById('requested-units');
     const stagingUnits = document.getElementById('staging-units');
     const onSceneUnits = document.getElementById('on-scene-units');
@@ -111,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const unitLi = document.createElement('li');
                 unitLi.textContent = unit;
 
-                unitStatusMap.set(unit, "Available");
+                unitStatusMap.set(unit, "Requested");
 
                 const statusButtons = ["Requested", "Staging", "On Scene", "Assigned"];
                 statusButtons.forEach(status => {
@@ -136,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to update unit display
     function updateUnitDisplay() {
         const statusLists = {
-            "Available": availableUnits,
             "Requested": requestedUnits,
             "Staging": stagingUnits,
             "On Scene": onSceneUnits,
@@ -196,11 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } else {
         console.warn("Menu elements are missing in the HTML.");
-    }
-
-    // Hide available column initially with visibility
-    if (availableUnits) {
-        availableUnits.parentElement.style.visibility = "hidden";
     }
 
     // Initialize sections
