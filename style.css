@@ -51,46 +51,6 @@ textarea {
     width: auto;
 }
 
-/* Image Styles */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-/* Top section wrapper */
-#top-section-wrapper {
-    background-color: #444;
-    color: white;
-}
-
-/* Top bar */
-#top-bar {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #dadce0;
-    background-color: transparent;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#hamburger-menu {
-    font-size: 24px;
-    margin-right: 10px;
-    border: none;
-    background: none;
-    color: white;
-    cursor: pointer;
-}
-
-#logo {
-    max-height: 50px;
-    margin-left: 10px;
-}
-
 /* Accountability display */
 #accountability-display {
     display: flex;
@@ -103,8 +63,8 @@ img {
 
 .accountability-column {
     flex: 1;
-    height: 200px; /* Fixed height for consistent size */
-    overflow-y: auto; /* Enable scrolling for overflow content */
+    height: 150px; /* Reduced height */
+    overflow-y: auto; /* Add scrollbar for overflow content */
     border: 1px solid #dadce0;
     padding: 10px;
     margin: 5px;
@@ -120,17 +80,10 @@ img {
 
 /* Hide the 'Available' column */
 #available-column {
-    display: none; /* Completely hide but keep in DOM */
+    display: none;
 }
 
 /* Main content areas */
-#container {
-    display: flex;
-    flex-grow: 1;
-    background-color: #f0f0f0;
-    flex-wrap: wrap;
-}
-
 #log,
 #resources,
 #checklist {
@@ -150,86 +103,21 @@ img {
     overflow-y: auto;
 }
 
-/* Settings panel styles */
-#settings-panel {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #dadce0;
-    z-index: 1000;
-    max-height: 80vh;
-    overflow-y: auto;
-    border-radius: 10px;
-    color: #202124;
-}
-
-#editable-checklist li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-#editable-checklist li button {
-    margin-left: 10px;
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-#editable-checklist li button:hover {
-    background-color: #c9302c;
-}
-
-/* Scrollbars */
-#log-entries,
-.accountability-column,
-#checklist-items,
-#editable-checklist {
+/* Scrollbars for accountability boxes */
+.accountability-column {
     scrollbar-width: thin;
     scrollbar-color: #888 #f0f0f0;
 }
 
-#log-entries::-webkit-scrollbar,
-.accountability-column::-webkit-scrollbar,
-#checklist-items::-webkit-scrollbar,
-#editable-checklist::-webkit-scrollbar {
+.accountability-column::-webkit-scrollbar {
     width: 8px;
 }
 
-#log-entries::-webkit-scrollbar-thumb,
-.accountability-column::-webkit-scrollbar-thumb,
-#checklist-items::-webkit-scrollbar-thumb,
-#editable-checklist::-webkit-scrollbar-thumb {
+.accountability-column::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 4px;
 }
 
-#log-entries::-webkit-scrollbar-track,
-.accountability-column::-webkit-scrollbar-track,
-#checklist-items::-webkit-scrollbar-track,
-#editable-checklist::-webkit-scrollbar-track {
+.accountability-column::-webkit-scrollbar-track {
     background-color: #f0f0f0;
-}
-
-/* Buttons for unit status */
-.accountability-column ul li button {
-    margin-right: 5px;
-    background-color: #337ab7;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.accountability-column ul li button:hover {
-    background-color: #286090;
 }
