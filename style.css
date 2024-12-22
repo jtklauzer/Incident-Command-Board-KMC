@@ -53,9 +53,10 @@ textarea {
 
 /* Image Styles */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-height: 40px !important;  /* Force logo size to 40px */
+    width: auto !important;       /* Ensure width is auto */
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 /* Top section wrapper */
