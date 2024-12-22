@@ -52,9 +52,10 @@ textarea {
 
 /* Top Bar Styles */
 #top-section-wrapper {
-    background-color: #424242; /* Lighter gray, similar to Gemini's menu */
+    background-color: #424242;
     width: 100%;
     padding: 10px;
+    border-bottom: none; /* Remove border between top and bottom */
 }
 
 #top-bar {
@@ -114,21 +115,21 @@ textarea {
 #accountability-display {
     display: flex;
     padding: 10px;
-    border-bottom: 1px solid #dadce0;
     background-color: transparent;
     flex-wrap: wrap;
     width: 100%;
+    border-bottom: none;
 }
 
 .accountability-column {
     flex: 1;
     height: 150px;
     overflow-y: auto;
-    border: 1px solid #dadce0; /* Smaller border */
     padding: 10px;
     margin: 5px;
     background-color: white;
     border-radius: 5px;
+    border: none; /* remove border from accountability columns */
 }
 
 .accountability-column h3,
@@ -155,7 +156,6 @@ textarea {
 #checklist {
     flex: 1;
     padding: 10px;
-    border: 1px solid #dadce0; /* Smaller border */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -164,6 +164,7 @@ textarea {
     min-height: 200px;
     margin: 5px;
     box-sizing: border-box;
+    border: none; /* Remove border from bottom sections */
 }
 
 #log-entries {
