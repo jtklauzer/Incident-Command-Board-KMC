@@ -52,7 +52,7 @@ textarea {
 
 /* Top Bar Styles */
 #top-section-wrapper {
-    background-color: #303030;
+    background-color: #424242; /* Lighter gray, similar to Gemini's menu */
     width: 100%;
     padding: 10px;
 }
@@ -124,7 +124,7 @@ textarea {
     flex: 1;
     height: 150px;
     overflow-y: auto;
-    border: 1px solid #dadce0;
+    border: 1px solid #dadce0; /* Smaller border */
     padding: 10px;
     margin: 5px;
     background-color: white;
@@ -155,7 +155,7 @@ textarea {
 #checklist {
     flex: 1;
     padding: 10px;
-    border: 1px solid #dadce0;
+    border: 1px solid #dadce0; /* Smaller border */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
