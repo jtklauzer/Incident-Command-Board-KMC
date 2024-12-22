@@ -167,6 +167,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Custom text input for the log
+    const customTextInput = document.getElementById('custom-log-text');
+    const addCustomTextButton = document.getElementById('add-custom-log');
+
+    if (customTextInput && addCustomTextButton) {
+        addCustomTextButton.addEventListener('click', () => {
+            const customText = customTextInput.value.trim();
+            if (customText) {
+                addLogMessage(customText);
+                customTextInput.value = "";
+            }
+        });
+    }
+
     // Menu functionality
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const settingsPanel = document.getElementById('settings-panel');
@@ -182,6 +196,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } else {
         console.warn("Menu elements are missing in the HTML.");
+    }
+
+    // Hide available column initially
+    if (availableUnits) {
+        availableUnits.parentElement.style.display = "none";
     }
 
     // Initialize sections
