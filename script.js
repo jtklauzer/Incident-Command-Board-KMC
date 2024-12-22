@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Selectors for checklist
+    // Selectors
+    const addLogButton = document.getElementById('add-log');
+    const newLogEntryTextarea = document.getElementById('new-log-entry');
+    const logEntriesList = document.getElementById('log-entries');
     const checklistUl = document.getElementById('checklist-items');
-    const editableChecklist = document.getElementById('editable-checklist');
     const newChecklistItemInput = document.getElementById('new-checklist-item');
     const addChecklistItemButton = document.getElementById('add-checklist-item');
-
-    // Selectors for resources
     const resourcesDiv = document.getElementById('battalions');
-    const availableColumn = document.getElementById('available-column'); // Reference to available column
     const requestedUnits = document.getElementById('requested-units');
     const stagingUnits = document.getElementById('staging-units');
     const onSceneUnits = document.getElementById('on-scene-units');
     const assignedUnits = document.getElementById('assigned-units');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const settingsPanel = document.getElementById('settings-panel');
+    const closeSettingsButton = document.getElementById('close-settings');
 
-    // Unit status map and default battalions
+    // Data
     const unitStatusMap = new Map();
     const battalionsData = {
         "Battalion 3": [
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "EOD", "Electrical", "Water/Fuels", "Bio", "ROC"
         ]
     };
-
     const checklistItems = [
         "Command Established",
         "360 Complete",
@@ -44,17 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "Overhaul"
     ];
 
-    // Function to log messages
+    // Functions
     function addLogMessage(message) {
-        const logEntries = document.getElementById('log-entries');
         const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const newLi = document.createElement('li');
         newLi.textContent = `${timestamp} - ${message}`;
-        logEntries.appendChild(newLi);
-        logEntries.scrollTop = logEntries.scrollHeight;
+        logEntriesList.appendChild(newLi);
+        logEntriesList.scrollTop = logEntriesList.scrollHeight;
     }
 
-    // Function to populate the checklist
     function populateChecklist() {
         checklistUl.innerHTML = "";
         checklistItems.forEach(item => {
@@ -75,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Function to populate resources
     function populateResources() {
         resourcesDiv.innerHTML = "";
         for (const battalion in battalionsData) {
@@ -88,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const unitLi = document.createElement('li');
                 unitLi.textContent = unit;
 
-                unitStatusMap.set(unit, "Available"); // Default to available
+                unitStatusMap.set(unit, "Available");
 
                 const statusButtons = ["Requested", "Staging", "On Scene", "Assigned"];
                 statusButtons.forEach(status => {
@@ -110,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Function to update unit display
     function updateUnitDisplay() {
         const statusLists = {
             "Requested": requestedUnits,
@@ -132,7 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Add new checklist items
+    // Event Listeners
+    addLogButton.addEventListener('click', () => {
+        const logMessage = newLogEntryTextarea.value.trim();
+        if (logMessage !== "") {
+            addLogMessage(logMessage);
+            newLogEntryTextarea.value = "";
+        }
+    });
+
     addChecklistItemButton.addEventListener('click', () => {
         const newItem = newChecklistItemInput.value.trim();
         if (newItem) {
@@ -142,43 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Custom text input for the log
-    const customTextInput = document.getElementById('custom-log-text');
-    const addCustomTextButton = document.getElementById('add-custom-log');
+    hamburgerMenu.addEventListener('click', () => {
+        settingsPanel.style.display = 'block';
+    });
 
-    if (customTextInput && addCustomTextButton) {
-        addCustomTextButton.addEventListener('click', () => {
-            const customText = customTextInput.value.trim();
-            if (customText) {
-                addLogMessage(customText);
-                customTextInput.value = "";
-            }
-        });
-    }
+    closeSettingsButton.addEventListener('click', () => {
+        settingsPanel.style.display = 'none';
+    });
 
-    // Menu functionality
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const settingsPanel = document.getElementById('settings-panel');
-    const closeSettingsButton = document.getElementById('close-settings');
-
-    if (hamburgerMenu && settingsPanel && closeSettingsButton) {
-        hamburgerMenu.addEventListener('click', () => {
-            settingsPanel.style.display = 'block';
-        });
-
-        closeSettingsButton.addEventListener('click', () => {
-            settingsPanel.style.display = 'none';
-        });
-    } else {
-        console.warn("Menu elements are missing in the HTML.");
-    }
-
-    // Hide available column but keep it in the DOM
-    if (availableColumn) {
-        availableColumn.style.display = "none";
-    }
-
-    // Initialize sections
+    // Initialization
     populateChecklist();
     populateResources();
     updateUnitDisplay();
