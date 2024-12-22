@@ -68,43 +68,38 @@ img {
 
 /* Top bar */
 #top-bar {
-    padding: 10px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #dadce0;
-    background-color: transparent;
-    flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* Menu container for larger clickable area */
+#menu-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#menu-container:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Optional hover effect */
+}
+
+#hamburger-menu {
+    font-size: 24px;
+    margin-right: 10px;
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
 }
 
 #logo {
     max-height: 50px;
-    width: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-#incident-info {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: auto;
-    flex-grow: 1;
-}
-
-#incident-name-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    max-width: 48%;
-    margin-right: 10px;
-}
-
-.same-size {
-    box-sizing: border-box;
-    width: auto;
-    max-width: 300px;
-    flex-grow: 1;
+    margin-left: 10px;
 }
 
 /* Accountability display */
@@ -162,15 +157,6 @@ img {
 }
 
 /* Settings panel styles */
-#hamburger-menu {
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 10px;
-    background: transparent;
-    border: none;
-    color: white;
-}
-
 #settings-panel {
     display: none; /* Hidden by default */
     position: fixed;
