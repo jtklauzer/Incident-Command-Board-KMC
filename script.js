@@ -196,6 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Menu elements are missing in the HTML.");
     }
 
+    // Remove available units column completely
+    const availableColumn = document.getElementById('available-column');
+    if (availableColumn) {
+        availableColumn.remove();
+    }
+
     // Initialize sections
     populateChecklist();
     populateEditableChecklist();
