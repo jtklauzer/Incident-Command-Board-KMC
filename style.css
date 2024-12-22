@@ -41,13 +41,13 @@ button {
 /* Input and Textarea Styles */
 input[type="text"],
 textarea {
-    border: 1px solid #303030; /* Dark gray border */
+    border: 1px solid #303030;
     padding: 5px;
-    box-sizing: border-box; /* Include padding in width */
+    box-sizing: border-box;
     font-size: 14px;
     margin: 2px;
-    background-color: white; /*Ensures inputs have white background*/
-    color: #202124; /*Dark gray text color for inputs*/
+    background-color: white;
+    color: #202124;
     width: auto;
 }
 
@@ -69,11 +69,10 @@ textarea {
 }
 
 #logo {
-    height: 40px; /* Reduced height */
+    max-height: 50px; /* This is the key change for the logo size */
     width: auto;
     margin-right: 10px;
     vertical-align: middle;
-    max-width: 500px; /* Reduced max-width */
 }
 
 #incident-info {
