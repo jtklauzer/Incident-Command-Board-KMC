@@ -36,7 +36,7 @@ button {
     font-size: 14px;
     margin: 2px;
     cursor: pointer;
-    box-sizing: border-box; /* Important for consistent button sizing */
+    box-sizing: border-box;
 }
 
 /* Input and Textarea Styles */
@@ -110,6 +110,12 @@ textarea {
 
 #add-log {
     margin: 0;
+}
+
+#hamburger-menu {
+    color: black;
+    background-color: white;
+    border: 1px solid #dadce0;
 }
 
 /* Accountability display */
