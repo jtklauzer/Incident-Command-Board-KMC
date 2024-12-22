@@ -141,7 +141,15 @@ textarea {
     display: none;
 }
 
-/* Main content areas */
+/* Main content container */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 #log,
 #resources,
 #checklist {
@@ -154,6 +162,8 @@ textarea {
     background-color: #303030;
     color: white;
     min-height: 200px;
+    margin: 5px;
+    box-sizing: border-box;
 }
 
 #log-entries {
