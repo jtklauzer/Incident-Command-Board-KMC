@@ -103,7 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
         resourcesDiv.innerHTML = "";
         for (const battalion in battalionsData) {
             const battalionDiv = document.createElement('div');
-            battalionDiv.innerHTML = `<h3>${battalion}</h3>`;
+            const battalionHeader = document.createElement('h3');
+            battalionHeader.textContent = battalion;
             const unitsList = document.createElement('ul');
 
             battalionsData[battalion].forEach(unit => {
@@ -125,6 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 unitsList.appendChild(unitLi);
             });
+
+            battalionDiv.appendChild(battalionHeader);
             battalionDiv.appendChild(unitsList);
             resourcesDiv.appendChild(battalionDiv);
         }
