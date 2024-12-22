@@ -51,6 +51,13 @@ textarea {
     width: auto;
 }
 
+/* Image Styles (ADD THIS!) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Top section wrapper */
 #top-section-wrapper {
     background-color: #444;
@@ -69,7 +76,7 @@ textarea {
 }
 
 #logo {
-    max-height: 50px; /* This is the key change for the logo size */
+    max-height: 50px;
     width: auto;
     margin-right: 10px;
     vertical-align: middle;
