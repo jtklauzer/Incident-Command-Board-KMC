@@ -53,7 +53,7 @@ textarea {
 
 /* Image Styles */
 img {
-    max-height: 40px !important;  /* Force logo size to 40px */
+    max-height: 60px !important;  /* Force logo size to 40px */
     width: auto !important;       /* Ensure width is auto */
     margin-right: 10px;
     vertical-align: middle;
