@@ -134,10 +134,6 @@ img {
     color: #202124;
 }
 
-#available-column {
-    display: none;
-}
-
 /* Main content areas */
 #container {
     display: flex;
@@ -176,6 +172,7 @@ img {
 }
 
 #settings-panel {
+    display: none; /* Hidden by default */
     position: fixed;
     top: 50%;
     left: 50%;
