@@ -55,7 +55,7 @@ textarea {
     background-color: #424242;
     width: 100%;
     padding: 10px;
-    border-bottom: none; /* Remove border between top and bottom */
+    border: none; /* Explicitly remove border */
 }
 
 #top-bar {
@@ -118,7 +118,7 @@ textarea {
     background-color: transparent;
     flex-wrap: wrap;
     width: 100%;
-    border-bottom: none;
+    border: none; /* Explicitly remove border */
 }
 
 .accountability-column {
@@ -129,7 +129,7 @@ textarea {
     margin: 5px;
     background-color: white;
     border-radius: 5px;
-    border: none; /* remove border from accountability columns */
+    border: none; /* Explicitly remove border */
 }
 
 .accountability-column h3,
@@ -164,7 +164,7 @@ textarea {
     min-height: 200px;
     margin: 5px;
     box-sizing: border-box;
-    border: none; /* Remove border from bottom sections */
+    border: none; /* Explicitly remove border */
 }
 
 #log-entries {
