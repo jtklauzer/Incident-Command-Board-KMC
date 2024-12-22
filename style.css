@@ -73,7 +73,6 @@ img {
     align-items: center;
     border-bottom: 1px solid #dadce0;
     background-color: transparent;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
