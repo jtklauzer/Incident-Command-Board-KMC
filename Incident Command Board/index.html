@@ -5,19 +5,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="top-bar">
-        <h1>Incident Command Board</h1>
-        <div id="incident-info">
-            <input type="text" id="incident-name" placeholder="Incident Name">
-            <input type="text" id="incident-location" placeholder="Location" size="20">
-            <textarea id="new-log-entry" placeholder="Add Log Entry"></textarea>
-            <button id="add-log">Add</button>
+    <div id="top-section-wrapper">
+        <div id="top-bar">
+            <button id="hamburger-menu">☰</button>
+            <img src="images/logo.png" alt="Incident Command Logo" id="logo">
+            <h1>Incident Command Board</h1>
+            <div id="incident-info">
+                <div id="incident-name-wrapper">
+                    <input type="text" id="incident-name" placeholder="Incident Name">
+                    <input type="text" id="incident-location" placeholder="Location" class="same-size">
+                </div>
+                <textarea id="new-log-entry" placeholder="Add Log Entry" class="same-size"></textarea>
+                <button id="add-log">Add</button>
+            </div>
         </div>
         <div id="accountability-display">
-            <div class="accountability-column" id="available-column"> <div class="accountability-column" >
+            <div class="accountability-column" id="available-column">
                 <h3>Available (<span id="available-count">0</span>)</h3>
                 <ul id="available-units"></ul>
-            </div>
             </div>
             <div class="accountability-column">
                 <h3>Requested (<span id="requested-count">0</span>)</h3>
@@ -37,6 +42,22 @@
             </div>
         </div>
     </div>
+
+    <div id="settings-panel" style="display: none;">
+        <h2>Settings</h2>
+        <h3>Checklist Management</h3>
+        <ul id="editable-checklist"></ul>
+        <input type="text" id="new-checklist-item" placeholder="New Checklist Item">
+        <button id="add-checklist-item">Add Item</button>
+        <h3>Resource Management (In Development)</h3>
+        <div id="editable-resources"></div>
+        <input type="text" id="new-resource-category" placeholder="New Resource Category">
+        <button id="add-resource-category">Add Category</button>
+        <input type="text" id="new-resource-item" placeholder="New Resource Item">
+        <button id="add-resource-item">Add Resource</button>
+        <button id="close-settings">Close</button>
+    </div>
+
     <div id="container">
         <div id="log">
             <h2>Incident Log</h2>
@@ -51,6 +72,7 @@
             <ul id="checklist-items"></ul>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
