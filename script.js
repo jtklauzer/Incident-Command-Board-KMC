@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Selectors for resources
     const resourcesDiv = document.getElementById('battalions');
+    const availableColumn = document.getElementById('available-column'); // Reference to available column
     const requestedUnits = document.getElementById('requested-units');
     const stagingUnits = document.getElementById('staging-units');
     const onSceneUnits = document.getElementById('on-scene-units');
@@ -74,29 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Function to populate the editable checklist
-    function populateEditableChecklist() {
-        editableChecklist.innerHTML = "";
-        checklistItems.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = "Delete";
-            deleteButton.addEventListener('click', () => {
-                const index = checklistItems.indexOf(item);
-                if (index > -1) {
-                    checklistItems.splice(index, 1);
-                    populateChecklist();
-                    populateEditableChecklist();
-                }
-            });
-
-            li.appendChild(deleteButton);
-            editableChecklist.appendChild(li);
-        });
-    }
-
     // Function to populate resources
     function populateResources() {
         resourcesDiv.innerHTML = "";
@@ -110,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const unitLi = document.createElement('li');
                 unitLi.textContent = unit;
 
-                unitStatusMap.set(unit, "Requested");
+                unitStatusMap.set(unit, "Available"); // Default to available
 
                 const statusButtons = ["Requested", "Staging", "On Scene", "Assigned"];
                 statusButtons.forEach(status => {
@@ -161,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
             checklistItems.push(newItem);
             newChecklistItemInput.value = "";
             populateChecklist();
-            populateEditableChecklist();
         }
     });
 
@@ -196,15 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Menu elements are missing in the HTML.");
     }
 
-    // Remove available units column completely
-    const availableColumn = document.getElementById('available-column');
+    // Hide available column but keep it in the DOM
     if (availableColumn) {
-        availableColumn.remove();
+        availableColumn.style.display = "none";
     }
 
     // Initialize sections
     populateChecklist();
-    populateEditableChecklist();
     populateResources();
     updateUnitDisplay();
 });
