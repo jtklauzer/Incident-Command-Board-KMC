@@ -167,6 +167,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Menu functionality
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const settingsPanel = document.getElementById('settings-panel');
+    const closeSettingsButton = document.getElementById('close-settings');
+
+    if (hamburgerMenu && settingsPanel && closeSettingsButton) {
+        hamburgerMenu.addEventListener('click', () => {
+            settingsPanel.style.display = 'block';
+        });
+
+        closeSettingsButton.addEventListener('click', () => {
+            settingsPanel.style.display = 'none';
+        });
+    } else {
+        console.warn("Menu elements are missing in the HTML.");
+    }
+
     // Initialize sections
     populateChecklist();
     populateEditableChecklist();
