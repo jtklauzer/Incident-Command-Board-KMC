@@ -110,7 +110,25 @@ const editableChecklist = document.getElementById('editable-checklist');
 const newChecklistItemInput = document.getElementById('new-checklist-item');
 const addChecklistItemButton = document.getElementById('add-checklist-item');
 
+// Populate the editable checklist
 checklistItems.forEach(item => addChecklistItemToEditList(item));
+
+// Populate the display checklist section
+checklistItems.forEach(item => {
+    const li = document.createElement('li');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = item.toLowerCase().replace(/ /g, '-');
+    checkbox.addEventListener('change', (event) => {
+        addLogMessage(`${item} ${event.target.checked ? "checked" : "unchecked"}`);
+    });
+    const label = document.createElement('label');
+    label.htmlFor = checkbox.id;
+    label.textContent = item;
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    checklistUl.appendChild(li);
+});
 
 function addChecklistItemToEditList(item) {
     const li = document.createElement('li');
@@ -166,7 +184,6 @@ addChecklistItemButton.addEventListener('click', () => {
         checklistUl.appendChild(li);
     }
 });
-
 
 const hamburgerMenu = document.getElementById('hamburger-menu');
 const settingsPanel = document.getElementById('settings-panel');
