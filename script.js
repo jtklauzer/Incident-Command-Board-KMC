@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+
     // Selectors
     const addLogButton = document.getElementById('add-log');
     const newLogEntryTextarea = document.getElementById('new-log-entry');
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Functions
     function addLogMessage(message) {
-        const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
         const newLi = document.createElement('li');
         newLi.textContent = `${timestamp} - ${message}`;
         logEntriesList.appendChild(newLi);
@@ -55,6 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function populateChecklist() {
+        console.log("populateChecklist function called");
+        const checklistUl = document.getElementById('checklist-items');
+        if (!checklistUl) {
+            console.error("Checklist UL element not found!");
+            return;
+        }
+
         checklistUl.innerHTML = "";
         checklistItems.forEach(item => {
             const li = document.createElement('li');
@@ -84,7 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             battalionsData[battalion].forEach(unit => {
                 const unitLi = document.createElement('li');
-                unitLi.textContent = unit;
+                const unitName = document.createElement('span');
+                unitName.textContent = unit;
+                unitLi.appendChild(unitName);
 
                 unitStatusMap.set(unit, "Available");
 
