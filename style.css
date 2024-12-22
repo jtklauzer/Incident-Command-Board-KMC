@@ -73,6 +73,7 @@ img {
     align-items: center;
     border-bottom: 1px solid #dadce0;
     background-color: transparent;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -102,11 +103,11 @@ img {
 
 .accountability-column {
     flex: 1;
+    height: 200px; /* Fixed height for consistent size */
+    overflow-y: auto; /* Enable scrolling for overflow content */
     border: 1px solid #dadce0;
     padding: 10px;
     margin: 5px;
-    overflow-y: auto;
-    min-height: 50px;
     background-color: white;
     border-radius: 5px;
 }
@@ -115,6 +116,11 @@ img {
 .accountability-column ul,
 .accountability-column li {
     color: #202124;
+}
+
+/* Hide the 'Available' column */
+#available-column {
+    display: none; /* Completely hide but keep in DOM */
 }
 
 /* Main content areas */
