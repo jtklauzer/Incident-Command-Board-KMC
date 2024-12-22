@@ -25,9 +25,14 @@ li {
     align-items: center;
 }
 
-/* Base button styles (No color here) */
+/* Base button styles (Explicit color and appearance reset) */
 button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #202124; /* Default button text color */
     border: 1px solid #dadce0;
+    background-color: white;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
@@ -52,7 +57,7 @@ textarea {
 
 /* Top Bar Styles */
 #top-section-wrapper {
-    background-color: #424242; /* Dark gray background for the top section */
+    background-color: #424242;
     width: 100%;
     padding: 10px;
     border: none;
@@ -114,9 +119,9 @@ textarea {
     margin: 0;
 }
 
-/* Hamburger Menu (Text is white, no border) */
+/* Hamburger Menu (Explicit white color, no border or background) */
 #menu-container #hamburger-menu {
-    color: white; /* Text is now white */
+    color: white;
     border: none;
     background: none;
 }
