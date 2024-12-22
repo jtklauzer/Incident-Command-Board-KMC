@@ -198,9 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Menu elements are missing in the HTML.");
     }
 
-    // Hide available column initially
+    // Hide available column initially with visibility
     if (availableUnits) {
-        availableUnits.parentElement.style.display = "none";
+        availableUnits.parentElement.style.visibility = "hidden";
     }
 
     // Initialize sections
