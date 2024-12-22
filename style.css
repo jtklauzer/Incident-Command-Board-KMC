@@ -69,9 +69,11 @@ textarea {
 }
 
 #logo {
-    height: 50px;
+    height: 75px;
+    width: auto;
     margin-right: 10px;
     vertical-align: middle;
+    max-width: 100px;
 }
 
 #incident-info {
