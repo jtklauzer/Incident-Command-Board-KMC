@@ -169,8 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
         closeSettingsButton.addEventListener('click', () => {
             settingsPanel.style.display = 'none';
         });
-    } else {
-        console.warn("Menu elements are missing in the HTML.");
     }
 
     // Hide available column but keep it in the DOM
