@@ -36,6 +36,7 @@ button {
     font-size: 14px;
     margin: 2px;
     cursor: pointer;
+    box-sizing: border-box; /* Important for consistent button sizing */
 }
 
 /* Input and Textarea Styles */
@@ -55,7 +56,7 @@ textarea {
     background-color: #424242;
     width: 100%;
     padding: 10px;
-    border: none; /* Explicitly remove border */
+    border: none;
 }
 
 #top-bar {
@@ -118,7 +119,7 @@ textarea {
     background-color: transparent;
     flex-wrap: wrap;
     width: 100%;
-    border: none; /* Explicitly remove border */
+    border: none;
 }
 
 .accountability-column {
@@ -129,7 +130,7 @@ textarea {
     margin: 5px;
     background-color: white;
     border-radius: 5px;
-    border: none; /* Explicitly remove border */
+    border: none;
 }
 
 .accountability-column h3,
@@ -164,12 +165,30 @@ textarea {
     min-height: 200px;
     margin: 5px;
     box-sizing: border-box;
-    border: none; /* Explicitly remove border */
+    border: none;
 }
 
 #log-entries {
     flex-grow: 1;
     overflow-y: auto;
+}
+
+/* Resources section */
+#battalions > div {
+    margin-bottom: 10px;
+}
+
+#battalions li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+#battalions li button {
+    width: 100%;
+    margin-bottom: 2px;
+    box-sizing: border-box;
 }
 
 /* Scrollbars for accountability boxes */
