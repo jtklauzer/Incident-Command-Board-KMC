@@ -48,7 +48,66 @@ textarea {
     margin: 2px;
     background-color: white;
     color: #202124;
-    width: auto;
+}
+
+/* Top Bar Styles */
+#top-section-wrapper {
+    background-color: #303030;
+    width: 100%;
+    padding: 10px;
+}
+
+#top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#menu-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+#incident-info {
+    display: flex;
+    align-items: center;
+}
+
+#incident-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+#incident-name-wrapper input {
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+#incident-name-wrapper input:last-child {
+    margin-bottom: 0px;
+}
+
+#new-log-entry {
+    flex-grow: 1;
+    min-height: 30px;
+    max-height: 60px;
+    margin-right: 10px;
+}
+
+#top-bar h1 {
+    margin: 0;
+    color: white;
+}
+
+#add-log {
+    margin: 0;
 }
 
 /* Accountability display */
@@ -63,8 +122,8 @@ textarea {
 
 .accountability-column {
     flex: 1;
-    height: 150px; /* Reduced height */
-    overflow-y: auto; /* Add scrollbar for overflow content */
+    height: 150px;
+    overflow-y: auto;
     border: 1px solid #dadce0;
     padding: 10px;
     margin: 5px;
@@ -78,7 +137,6 @@ textarea {
     color: #202124;
 }
 
-/* Hide the 'Available' column */
 #available-column {
     display: none;
 }
